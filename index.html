@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NILA LABS</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#0B0F19;
+    color:#F5F7FA;
+    overflow-x:hidden;
+}
+
+/* Subtle animated gradient background */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: radial-gradient(circle at 20% 30%, rgba(30,42,71,0.4), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(230,30,50,0.15), transparent 40%);
+    z-index:-1;
+    animation:floatBg 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg{
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-20px);}
+}
+
+section{
+    padding:120px 24px;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(11,15,25,0.8);
+    backdrop-filter:blur(10px);
+    z-index:999;
+}
+
+.logo{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+nav a{
+    color:#8A93A6;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#F5F7FA;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:56px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:720px;
+    font-size:18px;
+    color:#8A93A6;
+    margin-bottom:40px;
+}
+
+.btn{
+    padding:14px 36px;
+    background:#E61E32;
+    border:none;
+    border-radius:30px;
+    color:white;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    box-shadow:0 0 25px rgba(230,30,50,0.6);
+    transform:translateY(-3px);
+}
+
+/* ================= SECTION HEADINGS ================= */
+
+.section-title{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:36px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    text-align:center;
+    max-width:720px;
+}
+
+.about p{
+    color:#8A93A6;
+    line-height:1.6;
+}
+
+/* ================= EXPERTISE ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:32px;
+    margin-top:60px;
+}
+
+.card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:12px;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#E61E32;
+}
+
+.card h3{
+    font-family:'Space Grotesk', sans-serif;
+    margin-bottom:15px;
+}
+
+.card ul{
+    list-style:none;
+    color:#8A93A6;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ================= VISION ================= */
+
+.vision{
+    text-align:center;
+    max-width:720px;
+}
+
+.vision p{
+    font-size:18px;
+    color:#8A93A6;
+    line-height:1.6;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:40px;
+    font-size:14px;
+    color:#8A93A6;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= FADE ANIMATION ================= */
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+    nav{
+        padding:20px;
+    }
+    .hero h1{
+        font-size:36px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">NILA LABS</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#vision">Vision</a>
+    </div>
+</nav>
+
+<section class="hero fade">
+    <h1>NILA LABS</h1>
+    <p>Engineering Attention. Building the Future.<br>
+    Technology, AI & Systems for a Smarter Generation.</p>
+    <a href="#about"><button class="btn">Explore Vision</button></a>
+</section>
+
+<section id="about" class="about fade">
+    <h2 class="section-title">Who I Am</h2>
+    <p>
+        Founder of Nila Labs. A technology builder focused on AI systems, digital behavior,
+        scalable platforms, and long-term value creation.
+    </p>
+</section>
+
+<section id="expertise" class="fade">
+    <h2 class="section-title">Expertise</h2>
+    <div class="grid">
+
+        <div class="card">
+            <h3>Intelligence & AI</h3>
+            <ul>
+                <li>AI Systems & Automation</li>
+                <li>Prompt Engineering</li>
+                <li>Model Integration</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Technology & Development</h3>
+            <ul>
+                <li>UI/UX Design</li>
+                <li>Frontend Development</li>
+                <li>App Architecture</li>
+                <li>Systems Thinking</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Finance & Markets</h3>
+            <ul>
+                <li>Cryptocurrency Research</li>
+                <li>Trading Psychology</li>
+                <li>Long-term Investing</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Creative Systems</h3>
+            <ul>
+                <li>Professional Editing</li>
+                <li>Color Grading</li>
+                <li>Motion Design</li>
+                <li>Digital Storytelling</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section id="vision" class="vision fade">
+    <h2 class="section-title">Vision</h2>
+    <p>
+        To build scalable platforms that improve digital attention, learning,
+        and long-term thinking — starting with the next generation.
+    </p>
+</section>
+
+<footer>
+    © 2024 Nila Labs. All rights reserved.
+</footer>
+
+<script>
+
+/* Scroll fade animation */
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+    const trigger = window.innerHeight * 0.85;
+    fades.forEach(f=>{
+        const top = f.getBoundingClientRect().top;
+        if(top < trigger){
+            f.classList.add('active');
+        }
+    });
+});
+
+</script>
+
+</body>
+  </html>
