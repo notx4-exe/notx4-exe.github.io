@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thico Silks Matric Hr Sec School – Nurturing Leaders Since 1995</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root {
+  --teal: #004d40;
+  --teal-mid: #00695c;
+  --teal-light: #00897b;
+  --teal-pale: #e0f2f1;
+  --coral: #ff7043;
+  --coral-dark: #e64a19;
+  --coral-light: #ff8a65;
+  --gold: #f9a825;
+  --white: #ffffff;
+  --off: #f8fafa;
+  --text: #1a2e2b;
+  --muted: #607d79;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+h1,h2,h3,.serif { font-family: 'Playfair Display', serif; }
+
+/* Sections */
+.section { display: none; min-height: 100vh; padding-top: 72px; }
+.section.active { display: block; animation: fadeUp 0.45s ease forwards; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+
+/* Nav */
+nav { position: fixed; top:0; left:0; right:0; z-index:100; background: rgba(0,77,64,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-inner { max-width:1280px; margin:auto; padding:0 1.5rem; height:72px; display:flex; align-items:center; justify-content:space-between; }
+.logo-name { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#fff; line-height:1.2; }
+.logo-sub { font-family:'Montserrat',sans-serif; font-size:0.6rem; color:rgba(255,255,255,0.6); letter-spacing:0.12em; text-transform:uppercase; }
+.nav-link { color:rgba(255,255,255,0.75); font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; padding:0.4rem 0.7rem; border-radius:6px; transition:all 0.2s; }
+.nav-link:hover, .nav-link.active { color:#fff; background:rgba(255,255,255,0.1); }
+.btn-coral { background: var(--coral); color:#fff; font-weight:700; font-size:0.82rem; padding:0.55rem 1.4rem; border-radius:50px; border:none; cursor:pointer; transition:all 0.2s; letter-spacing:0.04em; }
+.btn-coral:hover { background: var(--coral-dark); transform:translateY(-1px); box-shadow:0 6px 20px rgba(255,112,67,0.4); }
+.btn-teal { background: var(--teal); color:#fff; font-weight:700; font-size:0.9rem; padding:0.75rem 2rem; border-radius:50px; border:none; cursor:pointer; transition:all 0.2s; }
+.btn-teal:hover { background: var(--teal-mid); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,77,64,0.3); }
+.btn-outline { border:2px solid var(--coral); color:var(--coral); background:transparent; font-weight:700; font-size:0.9rem; padding:0.7rem 1.8rem; border-radius:50px; cursor:pointer; transition:all 0.2s; }
+.btn-outline:hover { background:var(--coral); color:#fff; }
+
+/* Cards */
+.card { background:#fff; border-radius:20px; box-shadow: 0 4px 24px rgba(0,77,64,0.08); transition: transform 0.25s, box-shadow 0.25s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 16px 48px rgba(0,77,64,0.14); }
+.card-teal { background: linear-gradient(135deg,var(--teal),var(--teal-mid)); color:#fff; border-radius:20px; }
+
+/* Section headers */
+.section-label { display:inline-block; background:rgba(0,77,64,0.08); color:var(--teal); font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1rem; }
+.section-title { font-size:clamp(1.8rem,4vw,2.8rem); color:var(--teal); margin-bottom:0.5rem; line-height:1.2; }
+.section-sub { color:var(--muted); font-size:0.95rem; max-width:560px; line-height:1.7; }
+
+/* Badge */
+.badge { display:inline-flex; align-items:center; gap:0.4rem; background:rgba(255,112,67,0.12); border:1px solid rgba(255,112,67,0.3); color:var(--coral); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.35rem 0.9rem; border-radius:50px; }
+.badge-pulse { width:7px; height:7px; background:var(--coral); border-radius:50%; animation:pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(1.4);} }
+
+/* Progress bar */
+.prog-bar { height:6px; background:rgba(0,77,64,0.1); border-radius:3px; overflow:hidden; }
+.prog-fill { height:100%; background:linear-gradient(90deg,var(--teal-light),var(--coral)); border-radius:3px; transition:width 1.2s cubic-bezier(.4,0,.2,1); }
+
+/* Toast */
+#toast { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(80px); background:var(--teal); color:#fff; padding:1rem 2rem; border-radius:50px; font-size:0.9rem; font-weight:600; box-shadow:0 8px 32px rgba(0,77,64,0.35); z-index:999; opacity:0; transition:all 0.4s; pointer-events:none; }
+#toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+/* Form inputs */
+.form-input { width:100%; padding:0.85rem 1.2rem; border:1.5px solid #e0e0e0; border-radius:12px; font-family:'Montserrat',sans-serif; font-size:0.9rem; outline:none; transition:border 0.2s; background:#fafafa; }
+.form-input:focus { border-color:var(--teal-light); background:#fff; }
+.form-label { font-size:0.8rem; font-weight:700; color:var(--teal); letter-spacing:0.05em; margin-bottom:0.4rem; display:block; }
+
+/* Hero gradient pattern */
+.hero-bg { background: linear-gradient(135deg, #002b22 0%, #004d40 45%, #00695c 100%); position:relative; overflow:hidden; }
+.hero-bg::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 80% 50%, rgba(255,112,67,0.18) 0%, transparent 65%), radial-gradient(ellipse 50% 80% at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 60%); }
+.hero-grid { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px); background-size:48px 48px; }
+
+/* Tab system */
+.tab-btn { padding:0.6rem 1.4rem; border-radius:50px; font-size:0.82rem; font-weight:700; cursor:pointer; border:2px solid #e0e0e0; color:var(--muted); background:#fff; transition:all 0.2s; }
+.tab-btn.active { border-color:var(--teal); background:var(--teal); color:#fff; }
+.tab-content { display:none; }
+.tab-content.active { display:block; animation:fadeUp 0.3s ease; }
+
+/* Hall of Fame */
+.hof-1 { background:linear-gradient(135deg,#b8860b,#daa520,#f9d357); }
+.hof-2 { background:linear-gradient(135deg,#6e6e6e,#aaa,#d0d0d0); }
+.hof-3 { background:linear-gradient(135deg,#7a4100,#a0522d,#cd7f32); }
+.rank-glow-1 { box-shadow: 0 0 0 3px rgba(249,211,87,0.5), 0 16px 40px rgba(249,168,37,0.3); }
+.rank-glow-2 { box-shadow: 0 0 0 3px rgba(200,200,200,0.5), 0 12px 32px rgba(160,160,160,0.25); }
+.rank-glow-3 { box-shadow: 0 0 0 3px rgba(205,127,50,0.5), 0 12px 32px rgba(160,80,0,0.2); }
+
+/* Drag zone */
+.drop-zone { border:2px dashed rgba(0,77,64,0.3); border-radius:20px; background:rgba(0,77,64,0.03); transition:all 0.3s; cursor:pointer; }
+.drop-zone.drag-over, .drop-zone:hover { border-color:var(--coral); background:rgba(255,112,67,0.05); }
+
+/* Loader dots */
+.loader-dots span { display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--teal); margin:0 3px; animation:bounce 1.2s infinite; }
+.loader-dots span:nth-child(2){animation-delay:.2s;}
+.loader-dots span:nth-child(3){animation-delay:.4s;}
+@keyframes bounce{0%,80%,100%{transform:scale(.8);opacity:.5;}40%{transform:scale(1.2);opacity:1;}}
+
+/* Subject modal */
+#modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:200; display:none; align-items:center; justify-content:center; padding:1.5rem; }
+#modal-overlay.open { display:flex; animation:fadeUp 0.25s ease; }
+#modal-box { background:#fff; border-radius:24px; max-width:560px; width:100%; max-height:88vh; overflow-y:auto; }
+
+/* Mobile nav */
+#mobile-menu { display:none; }
+#mobile-menu.open { display:block; }
+
+/* Score bar animation trigger */
+.animate-bar .prog-fill { animation: growBar 1.4s ease forwards; }
+@keyframes growBar { from{width:0%} }
+
+@media(max-width:768px){
+  .desktop-links { display:none!important; }
+  .mobile-btn-show { display:flex!important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <div style="cursor:pointer" onclick="showSection('home')">
+      <div class="logo-name">Thico Silks Matric<br/>Hr Sec School</div>
+      <div class="logo-sub">Est. 1995 · Thirubuvanam</div>
+    </div>
+    <div class="desktop-links" style="display:flex;gap:0.2rem;align-items:center;">
+      <span class="nav-link active" id="nl-home" onclick="showSection('home')">Home</span>
+      <span class="nav-link" id="nl-about" onclick="showSection('about')">About</span>
+      <span class="nav-link" id="nl-academics" onclick="showSection('academics')">Academics</span>
+      <span class="nav-link" id="nl-achievements" onclick="showSection('achievements')">Results</span>
+      <span class="nav-link" id="nl-hub" onclick="showSection('hub')">Student Hub</span>
+      <span class="nav-link" id="nl-ai" onclick="showSection('ai')">AI Assistant</span>
+      <span class="nav-link" id="nl-contact" onclick="showSection('contact')">Contact</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <button class="btn-coral" onclick="showSection('admission')">Apply Now</button>
+      <button class="mobile-btn-show" id="hamburger" style="display:none;background:rgba(255,255,255,0.12);border:none;color:#fff;width:40px;height:40px;border-radius:10px;cursor:pointer;font-size:1.1rem;" onclick="toggleMobile()"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" style="background:rgba(0,60,48,0.98);padding:1rem 1.5rem;display:none;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+      <span class="nav-link" onclick="showSection('home');toggleMobile()">Home</span>
+      <span class="nav-link" onclick="showSection('about');toggleMobile()">About</span>
+      <span class="nav-link" onclick="showSection('academics');toggleMobile()">Academics</span>
+      <span class="nav-link" onclick="showSection('achievements');toggleMobile()">Results</span>
+      <span class="nav-link" onclick="showSection('hub');toggleMobile()">Student Hub</span>
+      <span class="nav-link" onclick="showSection('ai');toggleMobile()">AI Assistant</span>
+      <span class="nav-link" onclick="showSection('contact');toggleMobile()">Contact</span>
+      <span class="nav-link" onclick="showSection('admission');toggleMobile()">Apply Now</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ TOAST ═══════════════════ -->
+<div id="toast"></div>
+
+<!-- ═══════════════════ HOME ═══════════════════ -->
+<div id="section-home" class="section active" style="padding-top:0;">
+  <!-- Hero -->
+  <section class="hero-bg" style="min-height:100vh;display:flex;align-items:center;">
+    <div class="hero-grid"></div>
+    <div style="max-width:1280px;margin:auto;padding:6rem 2rem 4rem;position:relative;z-index:1;width:100%;">
+      <div style="max-width:680px;">
+        <div class="badge" style="margin-bottom:1.5rem;">
+          <span class="badge-pulse"></span>
+          Admissions Open 2026–2027
+        </div>
+        <h1 style="font-size:clamp(2.4rem,6vw,4.2rem);color:#fff;line-height:1.12;margin-bottom:1.2rem;">
+          Nurturing<br/>
+          <span style="color:var(--coral);">Leaders</span><br/>
+          Since 1995
+        </h1>
+        <p style="color:rgba(255,255,255,0.72);font-size:1.05rem;line-height:1.8;margin-bottom:2.2rem;max-width:520px;">
+          30 years of academic excellence in the heart of Thirubuvanam. We shape thinkers, innovators, and compassionate citizens for tomorrow's world.
+        </p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <button class="btn-coral" style="font-size:1rem;padding:0.9rem 2.2rem;" onclick="showSection('admission')"><i class="fas fa-file-alt" style="margin-right:0.5rem;"></i>Apply for Admission</button>
+          <button class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4);" onclick="showSection('hub')"><i class="fas fa-book-open" style="margin-right:0.5rem;"></i>Student Hub</button>
+        </div>
+        <!-- Stats row -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;max-width:560px;">
+          <div style="text-align:center;">
+            <div style="font-size:2rem;font-weight:800;color:var(--coral);font-family:'Playfair Display',serif;">30+</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.2rem;">Years</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem;font-weight:800;color:var(--coral);font-family:'Playfair Display',serif;">98%</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.2rem;">Pass Rate</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem;font-weight:800;color:var(--coral);font-family:'Playfair Display',serif;">1200+</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.2rem;">Students</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem;font-weight:800;color:var(--coral);font-family:'Playfair Display',serif;">80+</div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.2rem;">Faculty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Floating card -->
+    <div style="position:absolute;right:5%;top:50%;transform:translateY(-50%);max-width:300px;display:none;" class="desktop-float-card">
+    </div>
+  </section>
+
+  <!-- Highlights Strip -->
+  <section style="background:var(--teal);padding:2.5rem 2rem;">
+    <div style="max-width:1280px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:center;">
+      <div><i class="fas fa-trophy" style="color:var(--coral);font-size:1.8rem;margin-bottom:0.6rem;display:block;"></i><div style="color:#fff;font-weight:700;font-size:0.9rem;">State Board Toppers</div><div style="color:rgba(255,255,255,0.5);font-size:0.78rem;margin-top:0.2rem;">Hall of Fame</div></div>
+      <div><i class="fas fa-flask" style="color:var(--coral);font-size:1.8rem;margin-bottom:0.6rem;display:block;"></i><div style="color:#fff;font-weight:700;font-size:0.9rem;">Modern Labs</div><div style="color:rgba(255,255,255,0.5);font-size:0.78rem;margin-top:0.2rem;">Science & Computer</div></div>
+      <div><i class="fas fa-robot" style="color:var(--coral);font-size:1.8rem;margin-bottom:0.6rem;display:block;"></i><div style="color:#fff;font-weight:700;font-size:0.9rem;">AI Study Assistant</div><div style="color:rgba(255,255,255,0.5);font-size:0.78rem;margin-top:0.2rem;">Powered by Claude AI</div></div>
+      <div><i class="fas fa-medal" style="color:var(--coral);font-size:1.8rem;margin-bottom:0.6rem;display:block;"></i><div style="color:#fff;font-weight:700;font-size:0.9rem;">Sports Excellence</div><div style="color:rgba(255,255,255,0.5);font-size:0.78rem;margin-top:0.2rem;">District Champions</div></div>
+      <div><i class="fas fa-users" style="color:var(--coral);font-size:1.8rem;margin-bottom:0.6rem;display:block;"></i><div style="color:#fff;font-weight:700;font-size:0.9rem;">Expert Faculty</div><div style="color:rgba(255,255,255,0.5);font-size:0.78rem;margin-top:0.2rem;">80+ Dedicated Teachers</div></div>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section style="max-width:1280px;margin:auto;padding:5rem 2rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+      <div>
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Three Decades of<br/><em>Academic Excellence</em></h2>
+        <p class="section-sub" style="margin-bottom:1.5rem;">Founded in 1995, Thico Silks Matric Hr Sec School has been the cornerstone of quality education in Thirubuvanam. Nestled in the cultural heartland of Tamil Nadu, we blend timeless values with modern pedagogy.</p>
+        <div style="display:flex;gap:2rem;margin-bottom:2rem;">
+          <div><div style="font-size:1.8rem;font-weight:800;color:var(--teal);font-family:'Playfair Display',serif;">1995</div><div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">Founded</div></div>
+          <div><div style="font-size:1.8rem;font-weight:800;color:var(--teal);font-family:'Playfair Display',serif;">TNBSE</div><div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">Affiliated</div></div>
+          <div><div style="font-size:1.8rem;font-weight:800;color:var(--teal);font-family:'Playfair Display',serif;">I–XII</div><div style="font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">Classes</div></div>
+        </div>
+        <button class="btn-teal" onclick="showSection('about')">Discover Our Story →</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="card" style="padding:1.5rem;border-left:4px solid var(--coral);">
+          <i class="fas fa-graduation-cap" style="color:var(--teal);font-size:1.5rem;margin-bottom:0.8rem;display:block;"></i>
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.3rem;">Academics First</div>
+          <div style="font-size:0.82rem;color:var(--muted);">Rigorous curriculum with focus on board exam excellence</div>
+        </div>
+        <div class="card" style="padding:1.5rem;border-left:4px solid var(--teal-light);">
+          <i class="fas fa-heart" style="color:var(--coral);font-size:1.5rem;margin-bottom:0.8rem;display:block;"></i>
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.3rem;">Values & Ethics</div>
+          <div style="font-size:0.82rem;color:var(--muted);">Building character alongside knowledge</div>
+        </div>
+        <div class="card" style="padding:1.5rem;border-left:4px solid var(--teal-light);">
+          <i class="fas fa-futbol" style="color:var(--teal);font-size:1.5rem;margin-bottom:0.8rem;display:block;"></i>
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.3rem;">Sports & Culture</div>
+          <div style="font-size:0.82rem;color:var(--muted);">8+ activities for holistic development</div>
+        </div>
+        <div class="card" style="padding:1.5rem;border-left:4px solid var(--coral);">
+          <i class="fas fa-microchip" style="color:var(--coral);font-size:1.5rem;margin-bottom:0.8rem;display:block;"></i>
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.3rem;">Digital Learning</div>
+          <div style="font-size:0.82rem;color:var(--muted);">AI-powered tools for 21st-century education</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities preview -->
+  <section style="background:var(--off);padding:5rem 2rem;">
+    <div style="max-width:1280px;margin:auto;">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <div class="section-label">Life at Thico Silks</div>
+        <h2 class="section-title" style="text-align:center;">Beyond the Classroom</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1rem;">
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-heart-pulse" style="font-size:2rem;color:var(--coral);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Junior Red Cross</div>
+        </div>
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-bullseye" style="font-size:2rem;color:var(--teal);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Archery</div>
+        </div>
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-om" style="font-size:2rem;color:var(--coral);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Yoga</div>
+        </div>
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-fist-raised" style="font-size:2rem;color:var(--teal);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Martial Arts</div>
+        </div>
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-staff-snake" style="font-size:2rem;color:var(--coral);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Silambam</div>
+        </div>
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-volleyball-ball" style="font-size:2rem;color:var(--teal);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Volleyball</div>
+        </div>
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-futbol" style="font-size:2rem;color:var(--coral);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Football</div>
+        </div>
+        <div class="card" style="padding:1.5rem;text-align:center;">
+          <i class="fas fa-ban" style="font-size:2rem;color:var(--teal);margin-bottom:0.7rem;display:block;"></i>
+          <div style="font-weight:700;font-size:0.82rem;color:var(--teal);">Anti-Drug Club</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background:linear-gradient(135deg,var(--coral),#e64a19);padding:5rem 2rem;text-align:center;">
+    <div style="max-width:600px;margin:auto;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;color:#fff;margin-bottom:1rem;">Begin Your Child's Journey of Excellence</h2>
+      <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;font-size:1rem;line-height:1.7;">Admissions for 2026–2027 are open. Secure a bright future at Thico Silks.</p>
+      <button onclick="showSection('admission')" style="background:#fff;color:var(--coral);font-weight:800;font-size:1rem;padding:1rem 2.5rem;border-radius:50px;border:none;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">Apply Now – It's Free</button>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<div id="section-about" class="section" style="background:var(--off);">
+  <div style="max-width:1280px;margin:auto;padding:4rem 2rem;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title" style="text-align:center;">Our Legacy & Values</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">A proud institution at the crossroads of tradition and modern education</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:4rem;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--teal);margin-bottom:1rem;">Our Story</h3>
+        <p style="color:var(--muted);line-height:1.9;margin-bottom:1rem;">Established in 1995, Thico Silks Matric Hr Sec School stands as a beacon of academic excellence in Thirubuvanam. Over three decades, we have nurtured thousands of students who have gone on to excel in engineering, medicine, arts, and public service.</p>
+        <p style="color:var(--muted);line-height:1.9;margin-bottom:1.5rem;">Situated on Main Road, Thirubuvanam, within the historically rich Thiruvidaimaruthur Taluk of Kumbakonam, our campus reflects the cultural depth and scholarly tradition of this sacred region of Tamil Nadu.</p>
+        <div style="background:#fff;border-radius:16px;padding:1.5rem;border-left:4px solid var(--coral);">
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.5rem;font-size:0.9rem;">📍 Address</div>
+          <div style="font-size:0.88rem;color:var(--muted);line-height:1.7;">Main Road, Thirubuvanam<br/>Thiruvidaimaruthur Taluk, Kumbakonam<br/>Thanjavur – 612103</div>
+          <div style="margin-top:0.8rem;font-weight:600;color:var(--teal);"><i class="fas fa-phone" style="margin-right:0.4rem;color:var(--coral);"></i>+91 83005 48449</div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--teal);border-radius:20px;padding:2rem;color:#fff;margin-bottom:1.5rem;">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:0.8rem;">Our Vision</h3>
+          <p style="color:rgba(255,255,255,0.8);line-height:1.8;font-size:0.9rem;">To be the most trusted centre of learning in South India — cultivating intellectually sharp, morally grounded, and socially responsible citizens equipped for a rapidly changing world.</p>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--coral),var(--coral-dark));border-radius:20px;padding:2rem;color:#fff;">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:0.8rem;">Our Mission</h3>
+          <p style="color:rgba(255,255,255,0.9);line-height:1.8;font-size:0.9rem;">Delivering world-class education through expert faculty, modern infrastructure, and a holistic curriculum — inspiring every student to discover their unique potential and pursue excellence.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Principal message -->
+    <div style="background:#fff;border-radius:24px;padding:3rem;box-shadow:0 8px 40px rgba(0,77,64,0.08);margin-bottom:4rem;">
+      <div style="display:flex;gap:2.5rem;align-items:center;flex-wrap:wrap;">
+        <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-light));display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:800;color:#fff;font-family:'Playfair Display',serif;flex-shrink:0;">T</div>
+        <div style="flex:1;min-width:250px;">
+          <div class="section-label" style="margin-bottom:0.6rem;">Principal's Message</div>
+          <p style="color:var(--muted);line-height:1.9;font-style:italic;font-size:0.96rem;margin-bottom:1rem;">"Education is not the filling of a pail, but the lighting of a fire. At Thico Silks, we stoke that fire every single day. We are not just preparing students for examinations — we are preparing them for life. Every child who walks through our gates carries the potential for greatness."</p>
+          <div style="font-weight:700;color:var(--teal);">The Principal</div>
+          <div style="font-size:0.8rem;color:var(--muted);">Thico Silks Matric Hr Sec School, Thirubuvanam</div>
+        </div>
+      </div>
+    </div>
+    <!-- Infrastructure -->
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--teal);text-align:center;margin-bottom:2.5rem;">World-Class Infrastructure</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;">
+        <div class="card" style="padding:1.8rem;"><i class="fas fa-microscope" style="color:var(--teal);font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i><div style="font-weight:700;color:var(--teal);margin-bottom:0.4rem;">Science Laboratories</div><div style="font-size:0.82rem;color:var(--muted);">Physics, Chemistry & Biology labs with modern equipment</div></div>
+        <div class="card" style="padding:1.8rem;"><i class="fas fa-desktop" style="color:var(--coral);font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i><div style="font-weight:700;color:var(--teal);margin-bottom:0.4rem;">Computer Lab</div><div style="font-size:0.82rem;color:var(--muted);">High-speed internet, 60+ computers, coding programs</div></div>
+        <div class="card" style="padding:1.8rem;"><i class="fas fa-book" style="color:var(--teal);font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i><div style="font-weight:700;color:var(--teal);margin-bottom:0.4rem;">Digital Library</div><div style="font-size:0.82rem;color:var(--muted);">5000+ books, e-journals, and digital resources</div></div>
+        <div class="card" style="padding:1.8rem;"><i class="fas fa-running" style="color:var(--coral);font-size:1.8rem;margin-bottom:0.8rem;display:block;"></i><div style="font-weight:700;color:var(--teal);margin-bottom:0.4rem;">Sports Grounds</div><div style="font-size:0.82rem;color:var(--muted);">Football, volleyball courts, archery range & track</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ ACADEMICS ═══════════════════ -->
+<div id="section-academics" class="section">
+  <div style="max-width:1280px;margin:auto;padding:4rem 2rem;">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <div class="section-label">Curriculum</div>
+      <h2 class="section-title" style="text-align:center;">Academic Programme</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Tamil Nadu State Board (TNBSE) curriculum — Classes I to XII</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem;margin-bottom:4rem;">
+      <div class="card" style="padding:2rem;border-top:4px solid var(--teal);">
+        <div style="font-size:1.5rem;font-weight:800;color:var(--teal);font-family:'Playfair Display',serif;margin-bottom:0.3rem;">I – V</div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.8rem;">Primary School</div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;">Tamil, English, Mathematics, Environmental Science, Computer Basics</div>
+      </div>
+      <div class="card" style="padding:2rem;border-top:4px solid var(--coral);">
+        <div style="font-size:1.5rem;font-weight:800;color:var(--teal);font-family:'Playfair Display',serif;margin-bottom:0.3rem;">VI – VIII</div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.8rem;">Middle School</div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;">Languages, Maths, Science, Social Science, Computer Science</div>
+      </div>
+      <div class="card" style="padding:2rem;border-top:4px solid var(--teal);">
+        <div style="font-size:1.5rem;font-weight:800;color:var(--teal);font-family:'Playfair Display',serif;margin-bottom:0.3rem;">IX – X</div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.8rem;">High School</div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;">Tamil, English, Maths, ★Science, ★Social Science — Board Focus</div>
+      </div>
+      <div class="card" style="padding:2rem;border-top:4px solid var(--coral);">
+        <div style="font-size:1.5rem;font-weight:800;color:var(--teal);font-family:'Playfair Display',serif;margin-bottom:0.3rem;">XI – XII</div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.8rem;">Higher Secondary</div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;">★Physics, ★Chemistry, ★Biology, ★Maths, Computer Science</div>
+      </div>
+    </div>
+    <!-- Subject grid -->
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--teal);text-align:center;margin-bottom:2rem;">Focus Subjects – Board Exam Resources</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;">
+      <div class="card" style="padding:1.5rem;text-align:center;cursor:pointer;" onclick="showSection('hub')">
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(0,77,64,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;"><i class="fas fa-square-root-alt" style="color:var(--teal);font-size:1.2rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);font-size:0.88rem;">Mathematics</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem;">Class 10, 11, 12</div>
+      </div>
+      <div class="card" style="padding:1.5rem;text-align:center;cursor:pointer;" onclick="showSection('hub')">
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(255,112,67,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;"><i class="fas fa-flask" style="color:var(--coral);font-size:1.2rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);font-size:0.88rem;">Science</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem;">Class 10</div>
+      </div>
+      <div class="card" style="padding:1.5rem;text-align:center;cursor:pointer;" onclick="showSection('hub')">
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(0,77,64,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;"><i class="fas fa-atom" style="color:var(--teal);font-size:1.2rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);font-size:0.88rem;">Physics</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem;">Class 11, 12</div>
+      </div>
+      <div class="card" style="padding:1.5rem;text-align:center;cursor:pointer;" onclick="showSection('hub')">
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(255,112,67,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;"><i class="fas fa-vial" style="color:var(--coral);font-size:1.2rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);font-size:0.88rem;">Chemistry</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem;">Class 11, 12</div>
+      </div>
+      <div class="card" style="padding:1.5rem;text-align:center;cursor:pointer;" onclick="showSection('hub')">
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(0,77,64,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;"><i class="fas fa-dna" style="color:var(--teal);font-size:1.2rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);font-size:0.88rem;">Biology</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem;">Class 11, 12</div>
+      </div>
+      <div class="card" style="padding:1.5rem;text-align:center;cursor:pointer;" onclick="showSection('hub')">
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(255,112,67,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;"><i class="fas fa-code" style="color:var(--coral);font-size:1.2rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);font-size:0.88rem;">Computer Science</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem;">Class 11, 12</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ ACHIEVEMENTS / HALL OF FAME ═══════════════════ -->
+<div id="section-achievements" class="section" style="background:var(--off);">
+  <div style="max-width:1280px;margin:auto;padding:4rem 2rem;">
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <div class="section-label">Board Results 2024</div>
+      <h2 class="section-title" style="text-align:center;">Hall of Fame</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Our brightest stars — Class 10 State Board Toppers</p>
+    </div>
+
+    <!-- Podium top 3 -->
+    <div style="display:flex;justify-content:center;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin:3rem 0;">
+      <!-- Silver #2 -->
+      <div style="text-align:center;order:1;">
+        <div class="card rank-glow-2" style="padding:1.8rem 1.5rem;position:relative;width:200px;">
+          <div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#aaa,#d0d0d0);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1rem;">2</div>
+          <div style="width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#6e6e6e,#ccc);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;margin:0 auto 1rem;">V</div>
+          <div style="font-weight:700;font-size:0.9rem;color:var(--teal);margin-bottom:0.2rem;">V. Devi Priya</div>
+          <div style="font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;color:#6e6e6e;">477</div>
+          <div style="font-size:0.72rem;color:var(--muted);">out of 500</div>
+          <div style="margin-top:0.5rem;">
+            <div class="prog-bar"><div class="prog-fill" style="width:95.4%"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Gold #1 -->
+      <div style="text-align:center;order:0;">
+        <div style="display:flex;justify-content:center;margin-bottom:0.5rem;"><span style="font-size:2rem;">👑</span></div>
+        <div class="card rank-glow-1" style="padding:2.2rem 2rem;position:relative;width:220px;background:linear-gradient(135deg,#fffbf0,#fff8e0);">
+          <div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#b8860b,#f9d357);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1.1rem;">1</div>
+          <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#b8860b,#f9d357);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;margin:0 auto 1rem;">R</div>
+          <div style="font-weight:800;font-size:1rem;color:var(--teal);margin-bottom:0.2rem;">R. Durga Devi</div>
+          <div style="font-size:2.4rem;font-weight:800;font-family:'Playfair Display',serif;color:var(--coral);">487</div>
+          <div style="font-size:0.78rem;color:var(--muted);">out of 500</div>
+          <div style="margin-top:0.8rem;">
+            <div class="prog-bar"><div class="prog-fill" style="width:97.4%"></div></div>
+          </div>
+          <div style="margin-top:0.8rem;display:inline-block;background:linear-gradient(135deg,var(--coral),var(--coral-dark));color:#fff;font-size:0.7rem;font-weight:700;padding:0.25rem 0.8rem;border-radius:50px;">🏆 School Topper</div>
+        </div>
+      </div>
+      <!-- Bronze #3 -->
+      <div style="text-align:center;order:2;">
+        <div class="card rank-glow-3" style="padding:1.8rem 1.5rem;position:relative;width:200px;">
+          <div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#7a4100,#cd7f32);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1rem;">3</div>
+          <div style="width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#7a4100,#cd7f32);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;margin:0 auto 1rem;">K</div>
+          <div style="font-weight:700;font-size:0.9rem;color:var(--teal);margin-bottom:0.2rem;">K. Nivetha</div>
+          <div style="font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;color:#a0522d;">455</div>
+          <div style="font-size:0.72rem;color:var(--muted);">out of 500</div>
+          <div style="margin-top:0.5rem;">
+            <div class="prog-bar"><div class="prog-fill" style="width:91%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rest of toppers -->
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--teal);text-align:center;margin-bottom:1.5rem;">Distinguished Performers</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;" id="topper-grid">
+    </div>
+
+    <!-- Summary stats -->
+    <div style="margin-top:3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;text-align:center;">
+      <div style="background:var(--teal);border-radius:20px;padding:2rem;"><div style="font-size:2.2rem;font-weight:800;color:var(--coral);font-family:'Playfair Display',serif;">100%</div><div style="color:rgba(255,255,255,0.7);font-size:0.8rem;margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.08em;">Pass Rate</div></div>
+      <div style="background:var(--coral);border-radius:20px;padding:2rem;"><div style="font-size:2.2rem;font-weight:800;color:#fff;font-family:'Playfair Display',serif;">487</div><div style="color:rgba(255,255,255,0.8);font-size:0.8rem;margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.08em;">Top Score / 500</div></div>
+      <div style="background:var(--teal);border-radius:20px;padding:2rem;"><div style="font-size:2.2rem;font-weight:800;color:var(--coral);font-family:'Playfair Display',serif;">10</div><div style="color:rgba(255,255,255,0.7);font-size:0.8rem;margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.08em;">Students Above 400</div></div>
+      <div style="background:var(--coral);border-radius:20px;padding:2rem;"><div style="font-size:2.2rem;font-weight:800;color:#fff;font-family:'Playfair Display',serif;">97.4%</div><div style="color:rgba(255,255,255,0.8);font-size:0.8rem;margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.08em;">Top Scorer %</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ STUDENT HUB ═══════════════════ -->
+<div id="section-hub" class="section">
+  <div style="max-width:1280px;margin:auto;padding:4rem 2rem;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label">Study Resources</div>
+      <h2 class="section-title" style="text-align:center;">Student Learning Hub</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Select your class and access notes, important questions, and PDF downloads</p>
+    </div>
+    <div style="display:flex;justify-content:center;gap:0.75rem;margin-bottom:2.5rem;flex-wrap:wrap;">
+      <button class="tab-btn active" id="tab-cls10" onclick="switchHubTab(10)">Class 10</button>
+      <button class="tab-btn" id="tab-cls11" onclick="switchHubTab(11)">Class 11</button>
+      <button class="tab-btn" id="tab-cls12" onclick="switchHubTab(12)">Class 12</button>
+    </div>
+    <div id="hub-10" class="tab-content active"></div>
+    <div id="hub-11" class="tab-content"></div>
+    <div id="hub-12" class="tab-content"></div>
+    <!-- Student Login card -->
+    <div style="margin-top:3rem;background:linear-gradient(135deg,var(--teal),var(--teal-light));border-radius:24px;padding:2.5rem;text-align:center;">
+      <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.5rem;margin-bottom:0.8rem;">Access Your Personalised Dashboard</h3>
+      <p style="color:rgba(255,255,255,0.75);margin-bottom:1.5rem;font-size:0.9rem;">Log in with your student credentials to track progress, saved notes, and quiz scores.</p>
+      <button class="btn-coral" onclick="showLoginModal()"><i class="fas fa-sign-in-alt" style="margin-right:0.5rem;"></i>Student Login</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ AI ASSISTANT ═══════════════════ -->
+<div id="section-ai" class="section" style="background:var(--off);">
+  <div style="max-width:900px;margin:auto;padding:4rem 2rem;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label">Powered by AI</div>
+      <h2 class="section-title" style="text-align:center;">AI Study Assistant</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Upload your question paper or notes — get instant summaries, key formulas, and practice questions</p>
+    </div>
+    <!-- Upload zone -->
+    <div class="drop-zone" id="drop-zone" style="padding:3rem 2rem;text-align:center;margin-bottom:1.5rem;"
+      ondragover="event.preventDefault();this.classList.add('drag-over')"
+      ondragleave="this.classList.remove('drag-over')"
+      ondrop="handleDrop(event)"
+      onclick="document.getElementById('ai-file').click()">
+      <i class="fas fa-cloud-upload-alt" style="font-size:3rem;color:var(--teal);opacity:0.5;margin-bottom:1rem;display:block;"></i>
+      <div style="font-weight:700;color:var(--teal);margin-bottom:0.3rem;">Drag & drop your file here</div>
+      <div style="font-size:0.82rem;color:var(--muted);">or click to browse — PDF, JPG, PNG supported</div>
+      <div id="ai-file-name" style="margin-top:1rem;font-size:0.85rem;color:var(--coral);font-weight:600;display:none;"></div>
+      <input type="file" id="ai-file" style="display:none;" accept=".pdf,.jpg,.jpeg,.png" onchange="onFileSelect(this)"/>
+    </div>
+    <!-- Topic input -->
+    <div style="margin-bottom:1.5rem;">
+      <label class="form-label">Or type your topic / question</label>
+      <textarea id="ai-topic" class="form-input" rows="3" placeholder="e.g. Explain the laws of thermodynamics, or list important questions from Newton's Laws..."></textarea>
+    </div>
+    <button id="ai-btn" class="btn-teal" style="width:100%;font-size:1rem;padding:1rem;" onclick="runAI()">
+      <i class="fas fa-magic" style="margin-right:0.6rem;"></i>Analyse & Generate Study Notes
+    </button>
+    <!-- Loader -->
+    <div id="ai-loader" style="display:none;text-align:center;padding:3rem 0;">
+      <div class="loader-dots"><span></span><span></span><span></span></div>
+      <div style="margin-top:1rem;color:var(--muted);font-size:0.9rem;">AI is analysing your content…</div>
+    </div>
+    <!-- AI Results -->
+    <div id="ai-results" style="display:none;margin-top:2rem;"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ ADMISSION ═══════════════════ -->
+<div id="section-admission" class="section">
+  <div style="max-width:1000px;margin:auto;padding:4rem 2rem;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="badge" style="display:inline-flex;margin-bottom:1rem;"><span class="badge-pulse"></span>Admissions Open 2026–2027</div>
+      <h2 class="section-title" style="text-align:center;">Join Our Family</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Take the first step toward a future of excellence. Fill out the enquiry form below.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start;">
+      <div>
+        <div style="background:var(--teal);border-radius:24px;padding:2rem;color:#fff;margin-bottom:1.5rem;">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;">Why Thico Silks?</h3>
+          <div style="space-y:0.8rem;">
+            <div style="display:flex;gap:0.7rem;align-items:flex-start;margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--coral);margin-top:0.2rem;flex-shrink:0;"></i><div style="font-size:0.88rem;color:rgba(255,255,255,0.85);">30+ years of academic excellence</div></div>
+            <div style="display:flex;gap:0.7rem;align-items:flex-start;margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--coral);margin-top:0.2rem;flex-shrink:0;"></i><div style="font-size:0.88rem;color:rgba(255,255,255,0.85);">98%+ board exam pass rate</div></div>
+            <div style="display:flex;gap:0.7rem;align-items:flex-start;margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--coral);margin-top:0.2rem;flex-shrink:0;"></i><div style="font-size:0.88rem;color:rgba(255,255,255,0.85);">Expert faculty with proven results</div></div>
+            <div style="display:flex;gap:0.7rem;align-items:flex-start;margin-bottom:0.8rem;"><i class="fas fa-check-circle" style="color:var(--coral);margin-top:0.2rem;flex-shrink:0;"></i><div style="font-size:0.88rem;color:rgba(255,255,255,0.85);">Modern labs and digital learning tools</div></div>
+            <div style="display:flex;gap:0.7rem;align-items:flex-start;"><i class="fas fa-check-circle" style="color:var(--coral);margin-top:0.2rem;flex-shrink:0;"></i><div style="font-size:0.88rem;color:rgba(255,255,255,0.85);">Holistic development — sports, arts & culture</div></div>
+          </div>
+        </div>
+        <div style="background:var(--off);border-radius:16px;padding:1.5rem;">
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.5rem;"><i class="fas fa-phone" style="color:var(--coral);margin-right:0.4rem;"></i>Call Us Directly</div>
+          <div style="font-size:1.2rem;font-weight:700;color:var(--teal);">+91 83005 48449</div>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:0.3rem;">Mon–Sat, 9:00 AM – 5:00 PM</div>
+        </div>
+      </div>
+      <div class="card" style="padding:2.5rem;" id="admission-form-box">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--teal);margin-bottom:1.5rem;">Enquiry Form</h3>
+        <div id="admission-form">
+          <div style="margin-bottom:1rem;">
+            <label class="form-label">Student's Full Name *</label>
+            <input type="text" id="adm-name" class="form-input" placeholder="e.g. Lakshmi Priya"/>
+          </div>
+          <div style="margin-bottom:1rem;">
+            <label class="form-label">Applying for Grade *</label>
+            <select id="adm-grade" class="form-input">
+              <option value="">Select Grade</option>
+              <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+              <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+              <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+              <option>Grade 10</option><option>Grade 11 – Science</option><option>Grade 12 – Science</option>
+            </select>
+          </div>
+          <div style="margin-bottom:1rem;">
+            <label class="form-label">Parent / Guardian Contact *</label>
+            <input type="tel" id="adm-phone" class="form-input" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+          <div style="margin-bottom:1.5rem;">
+            <label class="form-label">Message or Special Requirements</label>
+            <textarea id="adm-msg" class="form-input" rows="3" placeholder="Any questions, special requirements, or preferred contact time…"></textarea>
+          </div>
+          <button class="btn-coral" style="width:100%;font-size:1rem;padding:1rem;" onclick="submitAdmission()"><i class="fas fa-paper-plane" style="margin-right:0.5rem;"></i>Submit Enquiry</button>
+        </div>
+        <div id="admission-success" style="display:none;text-align:center;padding:2rem 0;">
+          <div style="font-size:3.5rem;margin-bottom:1rem;">🎉</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--teal);margin-bottom:0.5rem;">Enquiry Received!</h3>
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Thank you for your interest in Thico Silks. Our admissions team will call you within 24 hours.</p>
+          <button class="btn-teal" onclick="resetAdmission()">Submit Another Enquiry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
+<div id="section-contact" class="section" style="background:var(--off);">
+  <div style="max-width:1280px;margin:auto;padding:4rem 2rem;">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title" style="text-align:center;">Contact Us</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-bottom:3rem;">
+      <div class="card" style="padding:2rem;text-align:center;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(0,77,64,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><i class="fas fa-map-marker-alt" style="color:var(--teal);font-size:1.3rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.5rem;">Address</div>
+        <div style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Main Road, Thirubuvanam<br/>Thiruvidaimaruthur Taluk<br/>Kumbakonam, Thanjavur – 612103</div>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,112,67,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><i class="fas fa-phone" style="color:var(--coral);font-size:1.3rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.5rem;">Phone</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--teal);">+91 83005 48449</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.3rem;">Mon–Sat · 9AM–5PM</div>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(0,77,64,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><i class="fas fa-envelope" style="color:var(--teal);font-size:1.3rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.5rem;">Email</div>
+        <div style="font-size:0.88rem;color:var(--muted);">info@thicosilksschool.edu.in</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.3rem;">Admissions & General Enquiries</div>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,112,67,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><i class="fas fa-clock" style="color:var(--coral);font-size:1.3rem;"></i></div>
+        <div style="font-weight:700;color:var(--teal);margin-bottom:0.5rem;">School Hours</div>
+        <div style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Monday – Friday<br/>8:00 AM – 4:30 PM<br/>Saturday: 8:00 AM – 1:00 PM</div>
+      </div>
+    </div>
+    <!-- Map placeholder -->
+    <div style="background:#fff;border-radius:20px;overflow:hidden;height:300px;display:flex;align-items:center;justify-content:center;border:1.5px solid #e0e0e0;">
+      <div style="text-align:center;color:var(--muted);">
+        <i class="fas fa-map" style="font-size:3rem;margin-bottom:1rem;display:block;color:var(--teal);opacity:0.4;"></i>
+        <div style="font-weight:600;">Thirubuvanam, Kumbakonam</div>
+        <div style="font-size:0.8rem;margin-top:0.3rem;">Thanjavur District, Tamil Nadu</div>
+      </div>
+    </div>
+    <!-- Social -->
+    <div style="text-align:center;margin-top:2.5rem;">
+      <div style="font-weight:600;color:var(--teal);margin-bottom:1rem;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;">Follow Us</div>
+      <div style="display:flex;justify-content:center;gap:1rem;">
+        <a style="width:44px;height:44px;border-radius:50%;background:#1877f2;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-facebook-f"></i></a>
+        <a style="width:44px;height:44px;border-radius:50%;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-instagram"></i></a>
+        <a style="width:44px;height:44px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-whatsapp"></i></a>
+        <a style="width:44px;height:44px;border-radius:50%;background:#ff0000;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ MODALS ═══════════════════ -->
+<!-- Subject modal -->
+<div id="modal-overlay" onclick="closeModal(event)">
+  <div id="modal-box">
+    <div style="background:var(--teal);padding:1.5rem 2rem;border-radius:24px 24px 0 0;display:flex;justify-content:space-between;align-items:center;">
+      <div id="modal-title" style="color:#fff;font-family:'Playfair Display',serif;font-size:1.3rem;"></div>
+      <button onclick="closeModalNow()" style="background:rgba(255,255,255,0.15);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;">✕</button>
+    </div>
+    <div id="modal-content" style="padding:2rem;"></div>
+  </div>
+</div>
+
+<!-- Login modal -->
+<div id="login-modal" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:300;display:none;align-items:center;justify-content:center;padding:1.5rem;">
+  <div style="background:#fff;border-radius:24px;padding:2.5rem;max-width:420px;width:100%;animation:fadeUp 0.3s ease;">
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <div style="width:64px;height:64px;border-radius:20px;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><i class="fas fa-graduation-cap" style="color:var(--coral);font-size:1.5rem;"></i></div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--teal);">Student Login</h3>
+    </div>
+    <div style="margin-bottom:1rem;"><label class="form-label">Email / Roll Number</label><input type="text" id="login-email" class="form-input" placeholder="student@thicosilks.edu.in"/></div>
+    <div style="margin-bottom:1.5rem;"><label class="form-label">Password</label><input type="password" id="login-pass" class="form-input" placeholder="••••••••"/></div>
+    <button class="btn-coral" style="width:100%;padding:0.9rem;font-size:0.95rem;" onclick="doLogin()">Login to Dashboard</button>
+    <p style="text-align:center;margin-top:1rem;font-size:0.82rem;color:var(--muted);">Demo: any email + any password</p>
+    <button onclick="closeLoginModal()" style="display:block;width:100%;background:none;border:none;color:var(--muted);font-size:0.82rem;margin-top:0.5rem;cursor:pointer;">Cancel</button>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard-modal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);z-index:300;display:none;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto;">
+  <div style="background:#fff;border-radius:24px;max-width:640px;width:100%;padding:2.5rem;animation:fadeUp 0.3s ease;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--teal);">My Dashboard</h3>
+      <button onclick="closeDashboard()" style="background:rgba(0,77,64,0.08);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;">✕</button>
+    </div>
+    <div id="dash-welcome" style="background:var(--teal);color:#fff;border-radius:16px;padding:1.5rem;margin-bottom:1.5rem;">
+      <div style="font-size:0.8rem;opacity:0.7;margin-bottom:0.3rem;">Welcome back 👋</div>
+      <div id="dash-name" style="font-size:1.3rem;font-weight:700;font-family:'Playfair Display',serif;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+      <div style="background:var(--off);border-radius:16px;padding:1.2rem;text-align:center;"><div style="font-size:1.6rem;font-weight:800;color:var(--teal);">5</div><div style="font-size:0.75rem;color:var(--muted);">Subjects Active</div></div>
+      <div style="background:var(--off);border-radius:16px;padding:1.2rem;text-align:center;"><div style="font-size:1.6rem;font-weight:800;color:var(--coral);">3</div><div style="font-size:0.75rem;color:var(--muted);">Quizzes Done</div></div>
+      <div style="background:var(--off);border-radius:16px;padding:1.2rem;text-align:center;"><div style="font-size:1.6rem;font-weight:800;color:var(--teal);">72%</div><div style="font-size:0.75rem;color:var(--muted);">Avg Score</div></div>
+    </div>
+    <div>
+      <div style="font-weight:700;color:var(--teal);margin-bottom:1rem;font-size:0.9rem;">Study Progress</div>
+      <div style="space-y:0.8rem;">
+        <div style="margin-bottom:0.8rem;"><div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.3rem;"><span>Mathematics</span><span style="color:var(--coral);font-weight:600;">78%</span></div><div class="prog-bar"><div class="prog-fill" style="width:78%;"></div></div></div>
+        <div style="margin-bottom:0.8rem;"><div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.3rem;"><span>Physics</span><span style="color:var(--coral);font-weight:600;">65%</span></div><div class="prog-bar"><div class="prog-fill" style="width:65%;"></div></div></div>
+        <div style="margin-bottom:0.8rem;"><div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.3rem;"><span>Chemistry</span><span style="color:var(--coral);font-weight:600;">82%</span></div><div class="prog-bar"><div class="prog-fill" style="width:82%;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.3rem;"><span>Biology</span><span style="color:var(--coral);font-weight:600;">70%</span></div><div class="prog-bar"><div class="prog-fill" style="width:70%;"></div></div></div>
+      </div>
+    </div>
+    <button class="btn-teal" style="width:100%;margin-top:1.5rem;" onclick="closeDashboard()">Close Dashboard</button>
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer style="background:var(--teal);color:#fff;padding:3.5rem 2rem 2rem;">
+  <div style="max-width:1280px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;margin-bottom:2.5rem;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Thico Silks Matric<br/>Hr Sec School</div>
+      <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;letter-spacing:0.1em;text-transform:uppercase;">Est. 1995 · Thirubuvanam</div>
+      <div style="font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.7;">Nurturing leaders and scholars since 1995 in the cultural heart of Tamil Nadu.</div>
+    </div>
+    <div>
+      <div style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1rem;">Quick Links</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <span style="font-size:0.88rem;color:rgba(255,255,255,0.7);cursor:pointer;transition:color 0.2s;" onmouseover="this.style.color='var(--coral)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'" onclick="showSection('about')">About School</span>
+        <span style="font-size:0.88rem;color:rgba(255,255,255,0.7);cursor:pointer;" onmouseover="this.style.color='var(--coral)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'" onclick="showSection('achievements')">Board Results</span>
+        <span style="font-size:0.88rem;color:rgba(255,255,255,0.7);cursor:pointer;" onmouseover="this.style.color='var(--coral)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'" onclick="showSection('hub')">Student Hub</span>
+        <span style="font-size:0.88rem;color:rgba(255,255,255,0.7);cursor:pointer;" onmouseover="this.style.color='var(--coral)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'" onclick="showSection('admission')">Admissions</span>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1rem;">Contact</div>
+      <div style="font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.9;">
+        Main Road, Thirubuvanam<br/>
+        Kumbakonam, TN – 612103<br/>
+        <span style="color:var(--coral);font-weight:600;">+91 83005 48449</span>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;font-size:0.8rem;color:rgba(255,255,255,0.4);">
+    © 2025 Thico Silks Matric Hr Sec School. All rights reserved.
+  </div>
+</footer>
+
+<!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+<script>
+// ─── Section Navigation ───
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active'));
+  const el = document.getElementById('section-'+id);
+  const nl = document.getElementById('nl-'+id);
+  if(el) el.classList.add('active');
+  if(nl) nl.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleMobile(){
+  const m = document.getElementById('mobile-menu');
+  m.style.display = m.style.display==='block' ? 'none' : 'block';
+}
+
+// ─── Toast ───
+function showToast(msg, dur=3500){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), dur);
+}
+
+// ─── Hall of Fame Toppers ───
+const toppers = [
+  {name:'R. Ragarathy', score:432, pct:86.4},
+  {name:'S. Nandhini', score:425, pct:85},
+  {name:'S. Suhaina', score:425, pct:85},
+  {name:'R.K. Apsara', score:411, pct:82.2},
+  {name:'M. Abara Jeyandhi', score:409, pct:81.8},
+  {name:'A. Deepika', score:406, pct:81.2},
+  {name:'S. Krishna Priya', score:402, pct:80.4},
+];
+
+function initToppers(){
+  const grid = document.getElementById('topper-grid');
+  if(!grid) return;
+  grid.innerHTML = toppers.map((t,i)=>{
+    const initials = t.name.split(' ').slice(-1)[0][0];
+    const bgColors = ['#004d40','#00695c','#00897b','#0097a7','#006064','#1a237e','#283593'];
+    const bg = bgColors[i%bgColors.length];
+    return `<div class="card" style="padding:1.4rem;display:flex;align-items:center;gap:1rem;">
+      <div style="width:44px;height:44px;border-radius:50%;background:${bg};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem;flex-shrink:0;">${initials}</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:700;font-size:0.85rem;color:var(--teal);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${t.name}</div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;">${t.score} / 500 &nbsp;·&nbsp; ${t.pct}%</div>
+        <div class="prog-bar"><div class="prog-fill" style="width:${t.pct}%;"></div></div>
+      </div>
+      <div style="font-size:1.2rem;font-weight:800;color:var(--coral);font-family:'Playfair Display',serif;flex-shrink:0;">#${i+4}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─── Student Hub ───
+const hubData = {
+  10: [
+    {subj:'Mathematics', icon:'fa-square-root-alt', color:'var(--teal)', chapters:['Real Numbers','Polynomials','Linear Equations','Quadratic Equations','AP & GP','Triangles','Coordinate Geometry','Trigonometry','Surface Areas','Statistics','Probability']},
+    {subj:'Science', icon:'fa-flask', color:'var(--coral)', chapters:['Chemical Reactions','Acids, Bases & Salts','Metals & Non-Metals','Carbon Compounds','Life Processes','Control & Coordination','Electricity','Magnetic Effects','Light','Human Eye']},
+    {subj:'Social Science', icon:'fa-globe-asia', color:'var(--teal-mid)', chapters:['Rise of Nationalism','Nationalism in India','Indo-China','Resources','Agriculture','Manufacturing','Federalism','Democracy','Money & Credit','Globalisation']},
+    {subj:'English', icon:'fa-book', color:'#7c3aed', chapters:['Reading Comprehension','Letter Writing','Essay Writing','Grammar','Poetry','Prose Extracts','Formal Writing']},
+    {subj:'Tamil', icon:'fa-language', color:'#0f766e', chapters:['இலக்கணம்','செய்யுள்','உரைநடை','கட்டுரை','கடிதம்','படவாசிப்பு']},
+    {subj:'Computer Science', icon:'fa-desktop', color:'#1d4ed8', chapters:['Introduction to Computers','MS Office','Internet Basics','HTML Basics','Cyber Safety']},
+  ],
+  11: [
+    {subj:'Mathematics', icon:'fa-square-root-alt', color:'var(--teal)', chapters:['Sets','Relations & Functions','Trigonometric Functions','Complex Numbers','Linear Inequalities','Permutations','Binomial Theorem','Sequences & Series','Straight Lines','Conic Sections','3D Geometry','Limits','Statistics','Probability']},
+    {subj:'Physics', icon:'fa-atom', color:'var(--coral)', chapters:['Units & Measurements','Motion in a Straight Line','Motion in a Plane','Laws of Motion','Work & Energy','Gravitation','Properties of Matter','Thermodynamics','Waves','Oscillations']},
+    {subj:'Chemistry', icon:'fa-vial', color:'#0891b2', chapters:['Some Basic Concepts','Structure of Atom','Periodic Table','Chemical Bonding','States of Matter','Thermodynamics','Equilibrium','Redox Reactions','Hydrogen','s-Block','p-Block','Organic Chemistry','Hydrocarbons','Environment']},
+    {subj:'Biology', icon:'fa-dna', color:'#16a34a', chapters:['The Living World','Biological Classification','Plant Kingdom','Animal Kingdom','Morphology of Plants','Anatomy of Plants','Cell Structure','Cell Cycle','Biomolecules','Photosynthesis','Respiration','Plant Growth','Digestion','Breathing','Body Fluids','Locomotion','Neural Control','Chemical Coordination']},
+    {subj:'Computer Science', icon:'fa-code', color:'#7c3aed', chapters:['Python Fundamentals','Data Types','Control Structures','Functions','File Handling','Databases','SQL Basics','Networking','Cybersecurity']},
+    {subj:'English', icon:'fa-book-open', color:'#92400e', chapters:['Hornbill Prose','Snapshots','Writing Skills','Grammar','Comprehension']},
+  ],
+  12: [
+    {subj:'Mathematics', icon:'fa-square-root-alt', color:'var(--teal)', chapters:['Relations & Functions','Inverse Trigonometry','Matrices','Determinants','Continuity','Applications of Derivatives','Integrals','Applications of Integrals','Differential Equations','Vectors','3D Geometry','Linear Programming','Probability']},
+    {subj:'Physics', icon:'fa-atom', color:'var(--coral)', chapters:['Electric Charges','Electrostatic Potential','Current Electricity','Moving Charges','Magnetism','Electromagnetic Induction','AC Circuits','EM Waves','Ray Optics','Wave Optics','Dual Nature','Atoms','Nuclei','Semiconductors']},
+    {subj:'Chemistry', icon:'fa-vial', color:'#0891b2', chapters:['Solid State','Solutions','Electrochemistry','Chemical Kinetics','Surface Chemistry','p-Block (continued)','d & f Block','Coordination Compounds','Haloalkanes','Alcohols','Aldehydes','Carboxylic Acids','Amines','Biomolecules','Polymers']},
+    {subj:'Biology', icon:'fa-dna', color:'#16a34a', chapters:['Reproduction in Organisms','Sexual Reproduction','Human Reproduction','Reproductive Health','Principles of Inheritance','Molecular Basis of Inheritance','Evolution','Human Health','Microbes','Biotechnology','Organisms & Populations','Ecosystem','Biodiversity','Environmental Issues']},
+    {subj:'Computer Science', icon:'fa-code', color:'#7c3aed', chapters:['OOP in Python','Stack','Queue','Linked List','Sorting & Searching','MySQL Advanced','Django Basics','Network Security','Open Source','Society & IT']},
+    {subj:'English', icon:'fa-book-open', color:'#92400e', chapters:['Flamingo Prose','Flamingo Poetry','Vistas','Writing Skills','Grammar in Context']},
+  ]
+};
+
+function buildHub(cls){
+  const data = hubData[cls];
+  return `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">${
+    data.map(s=>`
+      <div class="card" style="padding:1.8rem;">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
+          <div style="width:46px;height:46px;border-radius:14px;background:${s.color};background:${s.color}22;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas ${s.icon}" style="color:${s.color};font-size:1.1rem;"></i>
+          </div>
+          <div>
+            <div style="font-weight:700;color:var(--teal);">${s.subj}</div>
+            <div style="font-size:0.75rem;color:var(--muted);">${s.chapters.length} Chapters · Class ${cls}</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.2rem;">
+          <button onclick="openSubjectModal('${s.subj}',${cls},'${s.icon}','${s.color}')" style="background:var(--off);border:none;border-radius:10px;padding:0.6rem 1rem;font-size:0.82rem;font-weight:600;color:var(--teal);cursor:pointer;text-align:left;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,77,64,0.1)'" onmouseout="this.style.background='var(--off)'"><i class="fas fa-book" style="margin-right:0.5rem;color:var(--coral);"></i>Chapter Notes</button>
+          <button onclick="openSubjectModal('${s.subj}',${cls},'${s.icon}','${s.color}')" style="background:var(--off);border:none;border-radius:10px;padding:0.6rem 1rem;font-size:0.82rem;font-weight:600;color:var(--teal);cursor:pointer;text-align:left;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,77,64,0.1)'" onmouseout="this.style.background='var(--off)'"><i class="fas fa-star" style="margin-right:0.5rem;color:var(--coral);"></i>Important Questions</button>
+          <button onclick="openSubjectModal('${s.subj}',${cls},'${s.icon}','${s.color}')" style="background:var(--off);border:none;border-radius:10px;padding:0.6rem 1rem;font-size:0.82rem;font-weight:600;color:var(--teal);cursor:pointer;text-align:left;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,77,64,0.1)'" onmouseout="this.style.background='var(--off)'"><i class="fas fa-file-pdf" style="margin-right:0.5rem;color:var(--coral);"></i>PDF Downloads</button>
+        </div>
+      </div>
+    `).join('')
+  }</div>`;
+}
+
+function switchHubTab(cls){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-cls'+cls).classList.add('active');
+  document.getElementById('hub-'+cls).classList.add('active');
+}
+
+function openSubjectModal(subj, cls, icon, color){
+  const chapters = hubData[cls].find(s=>s.subj===subj)?.chapters || [];
+  document.getElementById('modal-title').innerHTML=`<i class="fas ${icon}" style="margin-right:0.6rem;color:rgba(255,255,255,0.7);"></i>${subj} – Class ${cls}`;
+  document.getElementById('modal-content').innerHTML=`
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;">Select a resource type to access study materials for this subject.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;margin-bottom:2rem;">
+      <button onclick="showToast('📖 Notes coming soon! Login to access full materials.')" style="background:rgba(0,77,64,0.08);border:1.5px solid rgba(0,77,64,0.15);border-radius:12px;padding:1rem;cursor:pointer;text-align:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='rgba(0,77,64,0.15)'"><i class="fas fa-book" style="color:var(--teal);font-size:1.3rem;display:block;margin-bottom:0.4rem;"></i><span style="font-size:0.78rem;font-weight:700;color:var(--teal);">Notes</span></button>
+      <button onclick="showToast('⭐ Important Qs available after login!')" style="background:rgba(255,112,67,0.08);border:1.5px solid rgba(255,112,67,0.15);border-radius:12px;padding:1rem;cursor:pointer;text-align:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--coral)'" onmouseout="this.style.borderColor='rgba(255,112,67,0.15)'"><i class="fas fa-star" style="color:var(--coral);font-size:1.3rem;display:block;margin-bottom:0.4rem;"></i><span style="font-size:0.78rem;font-weight:700;color:var(--coral);">Imp. Questions</span></button>
+      <button onclick="showToast('📄 PDF Downloads available after login!')" style="background:rgba(0,77,64,0.08);border:1.5px solid rgba(0,77,64,0.15);border-radius:12px;padding:1rem;cursor:pointer;text-align:center;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='rgba(0,77,64,0.15)'"><i class="fas fa-file-pdf" style="color:var(--teal);font-size:1.3rem;display:block;margin-bottom:0.4rem;"></i><span style="font-size:0.78rem;font-weight:700;color:var(--teal);">PDF Download</span></button>
+    </div>
+    <div style="font-weight:700;color:var(--teal);margin-bottom:1rem;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.08em;">Chapter List</div>
+    <div style="display:flex;flex-direction:column;gap:0.5rem;">
+      ${chapters.map((c,i)=>`
+        <div style="display:flex;align-items:center;gap:0.8rem;padding:0.7rem 1rem;background:var(--off);border-radius:10px;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,77,64,0.08)'" onmouseout="this.style.background='var(--off)'" onclick="showToast('📚 Chapter ${i+1}: ${c.replace(/'/g,"\\'")} — Login to access full notes')">
+          <span style="width:24px;height:24px;border-radius:8px;background:${color};display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.72rem;font-weight:700;flex-shrink:0;">${i+1}</span>
+          <span style="font-size:0.88rem;color:var(--text);">${c}</span>
+          <i class="fas fa-chevron-right" style="margin-left:auto;color:rgba(0,0,0,0.2);font-size:0.72rem;"></i>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal(e){ if(e.target===document.getElementById('modal-overlay')) closeModalNow(); }
+function closeModalNow(){ document.getElementById('modal-overlay').classList.remove('open'); }
+
+// ─── AI Assistant ───
+function onFileSelect(inp){
+  const f = inp.files[0];
+  if(f){
+    document.getElementById('ai-file-name').textContent='📎 '+f.name+' selected';
+    document.getElementById('ai-file-name').style.display='block';
+  }
+}
+function handleDrop(e){
+  e.preventDefault();
+  document.getElementById('drop-zone').classList.remove('drag-over');
+  const f = e.dataTransfer.files[0];
+  if(f){
+    document.getElementById('ai-file-name').textContent='📎 '+f.name+' dropped';
+    document.getElementById('ai-file-name').style.display='block';
+  }
+}
+
+async function runAI(){
+  const topic = document.getElementById('ai-topic').value.trim();
+  const fileName = document.getElementById('ai-file-name').textContent;
+  const hasFile = fileName.includes('📎');
+  if(!topic && !hasFile){ showToast('Please upload a file or type a topic first.'); return; }
+  
+  const loader = document.getElementById('ai-loader');
+  const results = document.getElementById('ai-results');
+  const btn = document.getElementById('ai-btn');
+  
+  loader.style.display='block';
+  results.style.display='none';
+  results.innerHTML='';
+  btn.disabled=true;
+
+  const prompt = topic || 'General study notes for Class 12 Physics';
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        messages:[{
+          role:'user',
+          content:`You are a Tamil Nadu State Board AI study assistant for school students (Classes 10, 11, 12). A student has asked about: "${prompt}". Generate study notes in JSON ONLY (no markdown, no backticks). Keys: summary (2 sentences), keyPoints (array of 5 bullet-point facts), keyFormulas (array of 3-4 formulas or definitions as plain text strings), practiceQuestions (array of 3 short exam-style questions). Keep everything concise and exam-focused.`
+        }]
+      })
+    });
+    const data = await res.json();
+    let raw = data.content.map(b=>b.text||'').join('');
+    raw = raw.replace(/```json|```/g,'').trim();
+    const parsed = JSON.parse(raw);
+    
+    loader.style.display='none';
+    results.style.display='block';
+    results.innerHTML=`
+      <div style="display:flex;flex-direction:column;gap:1.2rem;animation:fadeUp 0.4s ease;">
+        <div class="card" style="padding:1.8rem;border-left:4px solid var(--teal);">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;"><i class="fas fa-align-left" style="color:var(--teal);"></i><strong style="color:var(--teal);">Summary</strong></div>
+          <p style="color:var(--muted);line-height:1.8;font-size:0.9rem;">${parsed.summary}</p>
+        </div>
+        <div class="card" style="padding:1.8rem;border-left:4px solid var(--coral);">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;"><i class="fas fa-list-check" style="color:var(--coral);"></i><strong style="color:var(--teal);">Key Points</strong></div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+            ${parsed.keyPoints.map(p=>`<li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.88rem;color:var(--muted);"><i class="fas fa-check-circle" style="color:var(--coral);margin-top:0.15rem;flex-shrink:0;"></i><span>${p}</span></li>`).join('')}
+          </ul>
+        </div>
+        <div class="card" style="padding:1.8rem;border-left:4px solid var(--teal-light);">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;"><i class="fas fa-superscript" style="color:var(--teal-light);"></i><strong style="color:var(--teal);">Key Formulas / Definitions</strong></div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            ${parsed.keyFormulas.map(f=>`<div style="background:var(--off);border-radius:10px;padding:0.7rem 1rem;font-size:0.88rem;color:var(--text);font-weight:500;">📐 ${f}</div>`).join('')}
+          </div>
+        </div>
+        <div class="card" style="padding:1.8rem;border-left:4px solid var(--gold);">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;"><i class="fas fa-pencil-alt" style="color:var(--gold);"></i><strong style="color:var(--teal);">Practice Questions</strong></div>
+          <ol style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;">
+            ${parsed.practiceQuestions.map((q,i)=>`<li style="display:flex;gap:0.7rem;align-items:flex-start;"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${i+1}</span><span style="font-size:0.88rem;color:var(--muted);">${q}</span></li>`).join('')}
+          </ol>
+        </div>
+      </div>`;
+  } catch(err) {
+    loader.style.display='none';
+    results.style.display='block';
+    results.innerHTML=`<div class="card" style="padding:2rem;text-align:center;"><i class="fas fa-exclamation-circle" style="color:var(--coral);font-size:2.5rem;margin-bottom:1rem;display:block;"></i><div style="color:var(--muted);">Could not reach AI service. Please try again.</div></div>`;
+  }
+  btn.disabled=false;
+}
+
+// ─── Admission Form ───
+function submitAdmission(){
+  const name = document.getElementById('adm-name').value.trim();
+  const grade = document.getElementById('adm-grade').value;
+  const phone = document.getElementById('adm-phone').value.trim();
+  if(!name||!grade||!phone){ showToast('⚠️ Please fill all required fields.'); return; }
+  document.getElementById('admission-form').style.display='none';
+  document.getElementById('admission-success').style.display='block';
+  showToast('🎉 Enquiry submitted! We\'ll call you within 24 hours.');
+  // Save to localStorage
+  const entries = JSON.parse(localStorage.getItem('thico_admissions')||'[]');
+  entries.push({name,grade,phone,date:new Date().toISOString()});
+  localStorage.setItem('thico_admissions',JSON.stringify(entries));
+}
+function resetAdmission(){
+  document.getElementById('admission-form').style.display='block';
+  document.getElementById('admission-success').style.display='none';
+  ['adm-name','adm-phone','adm-msg'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('adm-grade').value='';
+}
+
+// ─── Login / Dashboard ───
+function showLoginModal(){
+  document.getElementById('login-modal').style.display='flex';
+}
+function closeLoginModal(){
+  document.getElementById('login-modal').style.display='none';
+}
+function doLogin(){
+  const email = document.getElementById('login-email').value.trim();
+  const pass = document.getElementById('login-pass').value.trim();
+  if(!email||!pass){ showToast('Please enter your credentials.'); return; }
+  const name = email.split('@')[0].split('.').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
+  localStorage.setItem('thico_user',JSON.stringify({name,email}));
+  document.getElementById('login-modal').style.display='none';
+  document.getElementById('dash-name').textContent=name;
+  document.getElementById('dashboard-modal').style.display='flex';
+  showToast('✅ Logged in successfully!');
+}
+function closeDashboard(){
+  document.getElementById('dashboard-modal').style.display='none';
+}
+
+// ─── Init ───
+window.addEventListener('DOMContentLoaded',()=>{
+  initToppers();
+  document.getElementById('hub-10').innerHTML = buildHub(10);
+  document.getElementById('hub-11').innerHTML = buildHub(11);
+  document.getElementById('hub-12').innerHTML = buildHub(12);
+  
+  // restore session
+  const u = JSON.parse(localStorage.getItem('thico_user')||'null');
+  if(u) document.getElementById('dash-name').textContent=u.name;
+});
+</script>
+</body>
+</html>
